@@ -4,9 +4,6 @@ import HomeScreen from '../../screens/HomeScreen';
 export default HomeScreen;
 
 
-
-
-
 export const options = {
   tabBarLabel: 'Início',
   title: 'Página Inicial',

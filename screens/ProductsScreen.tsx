@@ -20,7 +20,7 @@ export default function ProductsScreen() {
           <TouchableOpacity
             style={styles.card}
             onPress={() =>
-              router.push({ pathname: './screens/ProductDetail', params: { id: item.id } })
+              router.push({ pathname: '/details', params: { id: item.id } })
             }
           >
             <Image source={{ uri: item.image }} style={styles.image} />
@@ -29,9 +29,7 @@ export default function ProductsScreen() {
           </TouchableOpacity>
         )}
       />
-      <View style={{ padding: 16 }}>
-        <Button title="Ver Carrinho" onPress={() => router.push('./screens/CartScreen')} />
-      </View>
+      
     </View>
   );
 }
@@ -39,6 +37,8 @@ export default function ProductsScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 16,
+    gridTemplateColumns: 'repeat(2, 1fr)',
+    gap: 16,
   },
   card: {
     backgroundColor: '#fff',

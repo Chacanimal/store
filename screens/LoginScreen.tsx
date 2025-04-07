@@ -71,7 +71,7 @@ export default function LoginScreen() {
       {/* 👇 Aqui está o botão para registar nova conta */}
       <View style={{ marginTop: 16 }}>
         <Text style={{ textAlign: 'center' }}>Ainda não tens conta?</Text>
-        <Button title="Criar conta" onPress={() => router.push('./screens/RegisterScreen')} />
+        <Button title="Criar conta" onPress={() => router.push('/register')} />
       </View>
     </View>
   );
