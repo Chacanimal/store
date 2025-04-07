@@ -1,6 +1,7 @@
+
 import React, { createContext, useContext, useEffect, useState, ReactNode } from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import jwt_decode  from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 
 type User = {
   id: string;
@@ -27,7 +28,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       if (storedToken) {
         setToken(storedToken);
         try {
-          const decoded: any = jwt_decode(storedToken);
+          const decoded: any = jwtDecode(storedToken);
           setUser({ id: decoded.id, email: decoded.email });
         } catch (error) {
           console.error('Error decoding token:', error);
@@ -51,7 +52,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
       await AsyncStorage.setItem('token', data.token);
       setToken(data.token);
-      const decoded: any = jwt_decode(data.token);
+      const decoded: any = jwtDecode(data.token);
       setUser({ id: decoded.id, email: decoded.email });
       return true;
     } catch (error) {
@@ -73,7 +74,7 @@ export const AuthProvider = ({ children }: { children: ReactNode }) => {
       }
       await AsyncStorage.setItem('token', data.token);
       setToken(data.token);
-      const decoded: any = jwt_decode(data.token);
+      const decoded: any = jwtDecode(data.token);
       setUser({ id: decoded.id, email: decoded.email });
       return true;
     } catch (error) {
