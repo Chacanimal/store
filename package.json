@@ -26,6 +26,7 @@
     "expo-system-ui": "~4.0.9",
     "expo-web-browser": "~14.0.2",
     "jwt-decode": "^4.0.0",
+    "nodemon": "^3.1.9",
     "react": "18.3.1",
     "react-dom": "18.3.1",
     "react-hook-form": "^7.55.0",
